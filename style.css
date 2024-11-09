@@ -399,11 +399,11 @@ div.forPrevious {
 
 div.rows {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: space-between;
   row-gap: 1.5em;
-  column-gap: 3em;
+  column-gap: 1.5em;
 }
 
 
