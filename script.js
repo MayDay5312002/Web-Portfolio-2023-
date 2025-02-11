@@ -7,16 +7,20 @@ let buttonIntroNextPg = document.querySelector("button.introNextPg");
 var dropDownOn = false;
 let introVal = true;
 let projectsVal = false;
+let badgesCertVal = false;
 let contactsVal = false;
 let introLink = document.querySelector("a.intro");
 let intro = document.querySelector("div.intro");
 let projectsLink = document.querySelector("a.projects");
 let projects = document.querySelector("div.project");
+let badgesCertLink = document.querySelector("a.CertBadges");
+let badgesCert = document.querySelector("div.CertBadges");
 let contactsLink = document.querySelector("a.contacts");
 let contacts = document.querySelector("div.contacts");
 let nextButton = document.querySelector("button.introNextPg");
 let prevButton = document.querySelector("button.previous");
 let prevBut = document.querySelector("button.previousCont");
+let prevButBC = document.querySelector("button.prevBC");
 let projs = document.querySelectorAll("div.vid video, div.vid img");
 let descrip = document.querySelectorAll("span.description");
 
@@ -69,13 +73,20 @@ menu.onclick = function() {
 }
 
 nextButton.onclick = function() {
-  console.log(introVal + " " + projectsVal + " " + contactsVal);
+  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
+  if(badgesCertVal == true){
+    badgesCertVal = false;
+    contactsVal = true;
+    contacts.style.display = "flex";
+    badgesCert.style.display = "none";
+    nextButton.style.display = "none";//
+    
+  }
   if (projectsVal == true) {
     projectsVal = false;
-    contactsVal = true;
+    badgesCertVal = true;
     projects.style.display = "none";
-    contacts.style.display = "flex";
-    nextButton.style.display = "none";//
+    badgesCert.style.display = "flex";
   }
   if (introVal == true) {
     introVal = false;
@@ -90,20 +101,23 @@ nextButton.onclick = function() {
 projectsLink.onclick = function() {
   projectsVal = true;
   introVal = false;
+  badgesCertVal = false;
   contactsVal = false;
   intro.style.display = "none";
   projects.style.display = "flex";
   contacts.style.display = "none";
+  badgesCert.style.display = "none";
   nextButton.style.display = "inline-block";//
 
 
 }
 
 prevButton.onclick = function() {
-  console.log(introVal + " " + projectsVal + " " + contactsVal);
+  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
   if (projectsVal == true) {
     projectsVal = false;
     contactsVal = false;
+    badgesCertVal = false;
     introVal = true;
     projects.style.display = "none";
     intro.style.display = "block";
@@ -122,10 +136,12 @@ prevButton.onclick = function() {
 contactsLink.onclick = function() {
   projectsVal = false;
   introVal = false;
+  badgesCertVal = false;
   contactsVal = true;
   intro.style.display = "none";
   projects.style.display = "none";
   contacts.style.display = "flex";
+  badgesCert.style.display = "none";
   nextButton.style.display = "none";//
 
 }
@@ -134,12 +150,41 @@ prevBut.onclick = function() {
   // console.log(introVal + " " + projectsVal + " " + contactsVal);
   // console.log("Is it working")
   if(contactsVal == true){
+    projectsVal = false;
+    badgesCertVal = true;
+    contactsVal = false;
+    introVal = false;
+
+    contacts.style.display = "none";
+    badgesCert.style.display = "flex";
+    nextButton.style.display = "inline-block";//
+
+  }
+}
+
+badgesCertLink.onclick = function(){
+  projectsVal = false;
+  introVal = false;
+  badgesCertVal = true;
+  contactsVal = false;
+  intro.style.display = "none";
+  projects.style.display = "none";
+  contacts.style.display = "none";
+  badgesCert.style.display = "flex";
+  nextButton.style.display = "inline-block";//
+}
+
+prevButBC.onclick = function() {
+  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
+  // console.log("Is it working")
+  if(badgesCertVal == true){
     projectsVal = true;
     contactsVal = false;
     introVal = false;
+    badgesCertVal = false;
     projects.style.display = "flex";
-    contacts.style.display = "none";
-    nextButton.style.display = "inline-block";//
+    badgesCert.style.display = "none";
+    // nextButton.style.display = "inline-block";//
 
   }
 }
