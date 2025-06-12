@@ -465,6 +465,22 @@ hr {
   margin: 0.2em;
 }
 
+hr.divider-top{
+  margin: 1.5em 2em;
+  margin-bottom: 0;
+}
+
+div.top-five{   
+  /* margin: 0.5em 0.5em; */
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  /* color: red; */
+}
+
+div.project-project {
+  margin: 0em;
+}
+
 
 
 
