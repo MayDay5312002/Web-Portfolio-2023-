@@ -465,6 +465,8 @@ hr {
   margin: 0.2em;
   border-style: solid;
   border-color: #545454;
+  /* border-width: 1em; */
+  border-radius: 3em;
 }
 
 hr.divider-top{
