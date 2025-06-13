@@ -463,6 +463,8 @@ div.forms button:hover{
 
 hr {
   margin: 0.2em;
+  border-style: solid;
+  border-color: #545454;
 }
 
 hr.divider-top{
