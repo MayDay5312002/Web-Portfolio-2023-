@@ -472,6 +472,9 @@ hr {
 hr.divider-top{
   margin: 1.5em 2em;
   margin-bottom: 0;
+  border-width: 0.13em;
+  border-bottom-color: rgb(194, 213, 219);
+  color: #545454;
 }
 
 div.top-five{   
