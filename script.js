@@ -23,6 +23,17 @@ let prevBut = document.querySelector("button.previousCont");
 let prevButBC = document.querySelector("button.prevBC");
 let projs = document.querySelectorAll("div.vid video, div.vid img");
 let descrip = document.querySelectorAll("span.description");
+let otherProjsDiv = document.querySelector("div.other-projects");
+
+let signifierOtherProj = 0;
+const otherProjsCont = [
+                    {"name": "Seli", "link": "https://selii.mooo.com/", "img-name": "Seli.png", "description": ["A web app that posts weekly LinkedIn job listings and helps you track and organize your applied jobs.", "Django, React, Nginx, Scrapy"]},
+                    {"name": "Concurrent Socket Server", "link": "https://github.com/MayDay5312002/Concurrent-Server-Socket", 
+                      "img-name": "conc.jpg", "description": ["A multithreaded client-server system that allows TCP connection between two machines.", "Java, Linux"]},
+                    {"name": "Candy Crash", "link": "https://github.com/MayDay5312002/Candy-Crash", "img-name": "CandyCrash.gif", "description": ["A game featuring a monster character that consumes candies.", "C#, Unity"]},
+                    {"name": "Personal Web Portfolio (2022)", "link": "https://mayday5312002.github.io/Portfolio/", "img-name": "port.jpg", "description": ["A website that displays my skills, who I am, and more.", "HTML, CSS, JS"]},
+                    {"name": "MayDay Projects", "link": "https://maydayproj.mooo.com", "img-name": "MayDay.jpg", "description": ["This website exhibits some of my school and personal projects.", "HTML, CSS, JS, Flask, Nginx"]},
+                  ];
 
 
 
@@ -87,11 +98,14 @@ nextButton.onclick = function() {
     badgesCertVal = true;
     projects.style.display = "none";
     badgesCert.style.display = "flex";
+
   }
   if (introVal == true) {
     introVal = false;
     projectsVal = true;
     projects.style.display = "flex";
+    createOtherProjects();
+    badgesCert.style.display = "none";
     intro.style.display = "none";
   }
 
@@ -105,6 +119,7 @@ projectsLink.onclick = function() {
   contactsVal = false;
   intro.style.display = "none";
   projects.style.display = "flex";
+  createOtherProjects();
   contacts.style.display = "none";
   badgesCert.style.display = "none";
   nextButton.style.display = "inline-block";//
@@ -183,8 +198,60 @@ prevButBC.onclick = function() {
     introVal = false;
     badgesCertVal = false;
     projects.style.display = "flex";
+    createOtherProjects();
     badgesCert.style.display = "none";
     // nextButton.style.display = "inline-block";//
 
   }
 }
+
+// Function to create other projects
+function createOtherProjects() {
+  if (signifierOtherProj === 0) {
+    for (let i = 0; i < otherProjsCont.length; i++) {
+    // const wrapperDiv = document.createElement('div');
+    const projectSpan = document.createElement('span');
+    projectSpan.className = 'project';
+
+    const vidDiv = document.createElement('div');
+    vidDiv.className = 'vid';
+
+    const imageLink = document.createElement('a');
+    imageLink.href = otherProjsCont[i].link;
+    imageLink.className = 'image';
+    imageLink.target = '_blank';
+
+    const img = document.createElement('img');
+    img.src = otherProjsCont[i]['img-name'];
+    img.className = 'proj';
+    img.height = 300;
+
+    imageLink.appendChild(img);
+    vidDiv.appendChild(imageLink);
+
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'title';
+
+    const titleLink = document.createElement('a');
+    titleLink.href = otherProjsCont[i].link;
+    titleLink.target = '_blank';
+    titleLink.textContent = otherProjsCont[i].name;
+
+    titleSpan.appendChild(titleLink);
+    vidDiv.appendChild(titleSpan);
+
+    projectSpan.appendChild(vidDiv);
+
+    const descSpan = document.createElement('span');
+    descSpan.className = 'description';
+    descSpan.innerHTML = `${otherProjsCont[i].description[0]}<hr>${otherProjsCont[i].description[1]}`;
+
+    projectSpan.appendChild(descSpan);
+    console.log("Project span created");
+    otherProjsDiv.appendChild(projectSpan);
+    signifierOtherProj = 1;
+    // wrapperDiv.appendChild(projectSpan);
+    }
+  }
+}
+
