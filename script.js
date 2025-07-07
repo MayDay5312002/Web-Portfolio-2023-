@@ -225,6 +225,7 @@ function createOtherProjects() {
     img.src = otherProjsCont[i]['img-name'];
     img.className = 'proj';
     img.height = 300;
+    img.style.height = "13em";
 
     imageLink.appendChild(img);
     vidDiv.appendChild(imageLink);
@@ -245,6 +246,7 @@ function createOtherProjects() {
     const descSpan = document.createElement('span');
     descSpan.className = 'description';
     descSpan.innerHTML = `${otherProjsCont[i].description[0]}<hr>${otherProjsCont[i].description[1]}`;
+    descSpan.style.width = "15em";
 
     projectSpan.appendChild(descSpan);
     console.log("Project span created");
