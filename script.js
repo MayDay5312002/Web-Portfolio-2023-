@@ -1,3 +1,18 @@
+let signifierOtherProj = 0;
+const otherProjsCont = [
+                    {"name": "Seli", "link": "https://selii.mooo.com/", "img-name": "Seli.png", "description": ["A web app that posts weekly LinkedIn job listings and helps you track and organize your applied jobs.", "Django, React, Nginx, Scrapy"]},
+                    {"name": "Concurrent Socket Server", "link": "https://github.com/MayDay5312002/Concurrent-Server-Socket", 
+                      "img-name": "conc.jpg", "description": ["A multithreaded client-server system that allows TCP connection between two machines.", "Java, Linux"]},
+                    {"name": "Candy Crash", "link": "https://github.com/MayDay5312002/Candy-Crash", "img-name": "CandyCrash.gif", "description": ["A game featuring a monster character that consumes candies.", "C#, Unity"]},
+                    {"name": "Personal Web Portfolio (2022)", "link": "https://mayday5312002.github.io/Portfolio/", "img-name": "port.jpg", "description": ["A website that displays my skills, who I am, and more.", "HTML, CSS, JS"]},
+                    {"name": "MayDay Projects", "link": "https://maydayproj.mooo.com", "img-name": "MayDay.jpg", "description": ["This website exhibits some of my school and personal projects.", "HTML, CSS, JS, Flask, Nginx"]},
+                  ];
+let otherProjsDiv = document.querySelector("div.other-projects");
+
+if(signifierOtherProj === 0){
+  createOtherProjects();
+  signifierOtherProj = 1;
+}
 
 let webName = document.querySelector("h1");
 let dropDown = document.querySelector("div.options");
@@ -23,19 +38,6 @@ let prevBut = document.querySelector("button.previousCont");
 let prevButBC = document.querySelector("button.prevBC");
 let projs = document.querySelectorAll("div.vid video, div.vid img");
 let descrip = document.querySelectorAll("span.description");
-let otherProjsDiv = document.querySelector("div.other-projects");
-
-let signifierOtherProj = 0;
-const otherProjsCont = [
-                    {"name": "Seli", "link": "https://selii.mooo.com/", "img-name": "Seli.png", "description": ["A web app that posts weekly LinkedIn job listings and helps you track and organize your applied jobs.", "Django, React, Nginx, Scrapy"]},
-                    {"name": "Concurrent Socket Server", "link": "https://github.com/MayDay5312002/Concurrent-Server-Socket", 
-                      "img-name": "conc.jpg", "description": ["A multithreaded client-server system that allows TCP connection between two machines.", "Java, Linux"]},
-                    {"name": "Candy Crash", "link": "https://github.com/MayDay5312002/Candy-Crash", "img-name": "CandyCrash.gif", "description": ["A game featuring a monster character that consumes candies.", "C#, Unity"]},
-                    {"name": "Personal Web Portfolio (2022)", "link": "https://mayday5312002.github.io/Portfolio/", "img-name": "port.jpg", "description": ["A website that displays my skills, who I am, and more.", "HTML, CSS, JS"]},
-                    {"name": "MayDay Projects", "link": "https://maydayproj.mooo.com", "img-name": "MayDay.jpg", "description": ["This website exhibits some of my school and personal projects.", "HTML, CSS, JS, Flask, Nginx"]},
-                  ];
-
-
 
 
 
@@ -104,7 +106,7 @@ nextButton.onclick = function() {
     introVal = false;
     projectsVal = true;
     projects.style.display = "flex";
-    createOtherProjects();
+    // createOtherProjects();
     badgesCert.style.display = "none";
     intro.style.display = "none";
   }
@@ -119,13 +121,15 @@ projectsLink.onclick = function() {
   contactsVal = false;
   intro.style.display = "none";
   projects.style.display = "flex";
-  createOtherProjects();
+  // createOtherProjects();
   contacts.style.display = "none";
   badgesCert.style.display = "none";
   nextButton.style.display = "inline-block";//
 
 
 }
+
+
 
 prevButton.onclick = function() {
   console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
@@ -198,7 +202,7 @@ prevButBC.onclick = function() {
     introVal = false;
     badgesCertVal = false;
     projects.style.display = "flex";
-    createOtherProjects();
+    // createOtherProjects();
     badgesCert.style.display = "none";
     // nextButton.style.display = "inline-block";//
 
