@@ -86,7 +86,7 @@ menu.onclick = function() {
 }
 
 nextButton.onclick = function() {
-  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
+  // console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
   if(badgesCertVal == true){
     badgesCertVal = false;
     contactsVal = true;
@@ -132,7 +132,7 @@ projectsLink.onclick = function() {
 
 
 prevButton.onclick = function() {
-  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
+  // console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
   if (projectsVal == true) {
     projectsVal = false;
     contactsVal = false;
@@ -194,7 +194,7 @@ badgesCertLink.onclick = function(){
 }
 
 prevButBC.onclick = function() {
-  console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
+  // console.log(introVal + " " + projectsVal + " " + badgesCertVal + " " + contactsVal);
   // console.log("Is it working")
   if(badgesCertVal == true){
     projectsVal = true;
@@ -253,7 +253,7 @@ function createOtherProjects() {
     // descSpan.style.width = "15em";
 
     projectSpan.appendChild(descSpan);
-    console.log("Project span created");
+    // console.log("Project span created");
     otherProjsDiv.appendChild(projectSpan);
     signifierOtherProj = 1;
     // wrapperDiv.appendChild(projectSpan);
