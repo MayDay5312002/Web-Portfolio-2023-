@@ -224,7 +224,7 @@ function createOtherProjects() {
     const img = document.createElement('img');
     img.src = otherProjsCont[i]['img-name'];
     img.className = 'proj';
-    img.height = 300;
+    // img.height = 300;
     // img.style.height = "13em";
 
     imageLink.appendChild(img);
